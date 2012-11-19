@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sekisanModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_INT" EntityType="sekisanModel.T_INT" />
+    <EntitySet Name="T_MASTER_DIFFICULT" EntityType="sekisanModel.T_MASTER_DIFFICULT" />
+    <EntitySet Name="T_MASTER_RATE" EntityType="sekisanModel.T_MASTER_RATE" />
+    <EntitySet Name="T_MEMBER" EntityType="sekisanModel.T_MEMBER" />
+  </EntityContainer>
+  <EntityType Name="T_INT">
+    <Key>
+      <PropertyRef Name="INT" />
+    </Key>
+    <Property Name="INT" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_MASTER_DIFFICULT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_MASTER_RATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RATE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NAME" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_MEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

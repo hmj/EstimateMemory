@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SekisanTeam.Models.T_MEMBER>
+
+@{
+    ViewBag.Title = "社員一覧";
+}
+
+<h2>社員一覧</h2>
+
+<p>
+    @Html.ActionButton("登録", "Create", "Member", null)
+</p>
+<table>
+    <tr>
+        <th style="width: 80px; text-align: center;">コード</th>
+        <th style="width: 250px; text-align: center;">社員名</th>
+        <th style="width: 60px;"></th>
+        <th style="width: 60px;"></th>
+        <th style="width: 60px;"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.CODE)</td>
+        <td>@Html.DisplayFor(modelItem => item.NAME)</td>
+        <td style="text-align: center;">@Html.ActionButton("編集", "Edit", "Member", new { id = item.ID })</td>
+        <td style="text-align: center;">@Html.ActionButton("閲覧", "Details", "Member", new { id = item.ID })</td>
+        <td style="text-align: center;">@Html.ActionButton("削除", "Delete", "Member", new {id=item.ID})</td>
+    </tr>
+}
+
+</table>

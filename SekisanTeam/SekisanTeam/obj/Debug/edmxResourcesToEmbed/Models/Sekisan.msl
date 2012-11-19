@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sekisanModelStoreContainer" CdmEntityContainer="defaultEntity">
+    <EntitySetMapping Name="T_CLIENT">
+      <EntityTypeMapping TypeName="sekisanModel.T_CLIENT">
+        <MappingFragment StoreEntitySet="T_CLIENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MASTER_DIFFICULT">
+      <EntityTypeMapping TypeName="sekisanModel.T_MASTER_DIFFICULT">
+        <MappingFragment StoreEntitySet="T_MASTER_DIFFICULT">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MASTER_RATE">
+      <EntityTypeMapping TypeName="sekisanModel.T_MASTER_RATE">
+        <MappingFragment StoreEntitySet="T_MASTER_RATE">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MEMBER">
+      <EntityTypeMapping TypeName="sekisanModel.T_MEMBER">
+        <MappingFragment StoreEntitySet="T_MEMBER">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMMENT">
+      <EntityTypeMapping TypeName="sekisanModel.T_COMMENT">
+        <MappingFragment StoreEntitySet="T_COMMENT">
+          <ScalarProperty Name="COMMENT_MESSAGE" ColumnName="COMMENT_MESSAGE" />
+          <ScalarProperty Name="DATETIME_COMMENT" ColumnName="DATETIME_COMMENT" />
+          <ScalarProperty Name="ID_MEMBER" ColumnName="ID_MEMBER" />
+          <ScalarProperty Name="ID_SEKISAN_DATA" ColumnName="ID_SEKISAN_DATA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SEKISAN_DATA">
+      <EntityTypeMapping TypeName="sekisanModel.T_SEKISAN_DATA">
+        <MappingFragment StoreEntitySet="T_SEKISAN_DATA">
+          <ScalarProperty Name="IS_KAKUTEI" ColumnName="IS_KAKUTEI" />
+          <ScalarProperty Name="ID_MEMBER" ColumnName="ID_MEMBER" />
+          <ScalarProperty Name="MEMO2" ColumnName="MEMO2" />
+          <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+          <ScalarProperty Name="ID_DIFFICULT" ColumnName="ID_DIFFICULT" />
+          <ScalarProperty Name="KINGAKU" ColumnName="KINGAKU" />
+          <ScalarProperty Name="ID_RATIO" ColumnName="ID_RATIO" />
+          <ScalarProperty Name="HOUR" ColumnName="HOUR" />
+          <ScalarProperty Name="NAME_TASK" ColumnName="NAME_TASK" />
+          <ScalarProperty Name="CODE_TASK" ColumnName="CODE_TASK" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

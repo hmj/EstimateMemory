@@ -1,0 +1,299 @@
+﻿/* ===================================================================
+CSS information
+
+ file name  :  contact.css
+ style info :  お問い合わせフォームのスタイル設定
+=================================================================== */
+.section a:hover img {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	-ms-filter: "alpha( opacity=50 )";
+	background: white;
+}
+
+#main #main_area {
+	width:960px;
+	margin-bottom:20px;
+	text-align:left;
+}
+#main #main_area h1 {
+	margin-bottom:20px;
+}
+#main .form_style {
+	width:960px;
+}
+
+#main .form_style p {
+	margin-bottom:1em;
+}
+#main .form_style p.end,
+#main .form_style p.finish {
+	margin-bottom:40px;
+}
+#main .form_style dl {
+	width:960px;
+	border-top:1px solid #8c8c8c;
+	border-bottom:1px solid #8c8c8c;
+	overflow:hidden;
+	margin-bottom:20px;
+	background:url(img/share/bg-form_left.gif) left repeat-y #ffffff;
+}
+#main .form_style dl span img {
+	vertical-align:middle;
+}
+
+#main .form_style dl span.small_txt {
+	font-size:92%;
+	width:auto;
+	clear:both;
+}
+#main .form_style dl span.small_txt2 {
+	font-size:92%;
+	width:auto;
+	clear:both;
+	display:block;
+	margin-top:-5px;
+	padding-bottom:5px;
+}
+#main .form_style dl dt {
+	width:190px;
+	background:#ddedfd;
+	padding:15px;
+	float:left;
+	clear:both;
+	border-top:1px solid #ffffff;
+	margin-top:-1px;
+	font-weight:bold;
+}
+#main .form_style dl dd {
+	background:#ffffff;
+	padding:15px;
+	margin-left:220px;
+	width:710px;
+	border-top:1px dotted #9a9a9a;
+	margin-top:-1px;
+        word-wrap:break-word;   /* 折り返し対応 */
+        word-break: break-all;  /* 折り返し対応 */
+}
+#main .form_style dl dd.odd {
+	background:#fafafa;
+}
+#main .form_style dl dd.odd_last {
+	background:#fafafa;
+	min-height:50px;
+}
+#main .form_style dl dt span {
+	padding-left:5px;
+}
+#main .form_style dl:after {
+	content: "."; display: block; visibility: hidden; height: 0.1px; font-size: 0.1em; line-height: 0; clear: both;
+}
+
+#main .form_style dl dd span {
+	padding:0px 4px;
+}
+#main .form_style dl dd em.must {
+	color:#fa5151;
+}
+#main .form_style dl dd select {
+	font-size:1em;
+}
+#main .form_style dl dd select.relation {
+	width:200px;
+}
+#main .form_style dl dd select.long_select {
+	width:200px;
+}
+#main .form_style dl dd div {
+	width:720px;
+	padding-bottom:8px;
+}
+#main .form_style dl dd div.ken {
+	clear:both;
+}
+#main .form_style dl dd div:after {
+	content: "."; display: block; visibility: hidden; height: 0.1px; font-size: 0.1em; line-height: 0; clear: both;
+}
+#main .form_style dl dd div span {
+	width:2.5em;
+	display:block;
+	float:left;
+}
+#main .form_style dl dd div span.type1 {
+	width:4em;
+	display:block;
+	float:left;
+}
+#main .form_style dl dd div span.post_txt {
+	width:1em;
+}
+#main .form_style dl dd div.ken span {
+	width:12em;
+}
+#main .form_style dl dd div.ken select {
+	width:auto;
+}
+#main .form_style dl dd div.add span {
+	width:12em;
+}
+#main .form_style dl dd div.bill span {
+	width:12em;
+}
+#main .form_style dl dd div.university {
+	padding: 0;
+}
+#main .form_style dl dd div.university:after {
+	display:inline;
+}
+#main .form_style dl dd div.university span {
+	width:2em;
+}
+#main .form_style dl dd div.university span.type1 {
+	width:4em;
+	padding-left:20px;
+}
+#main .form_style dl dd div.university input {
+	width:120px;
+}
+#main .form_style dl dd select.classification {
+	width:80px;
+	margin-left:10px;
+}
+#main .form_style dl dd div.day_select span.start {
+	display:block;
+	float:left;
+	width:8em;
+	text-align:left;
+}
+#main .form_style dl dd div.day_select .input_area {
+	float:left;
+	width:400px;
+}
+#main .form_style dl dd div .add_search {
+	margin:0 0 0 0px;
+	float:left;
+}
+
+#main .form_style dl dd div span.nest {
+	width:1em;
+	text-align:left;
+}
+#main .form_style dl dd div span.nest2 {
+	width:1em;
+	text-align:left;
+}
+#main .form_style dl dd div span.time {
+	width:2em;
+	text-align:left;
+	white-space:nowrap;
+}
+#main .form_style dl dd div input {
+	float:left;
+}
+#main .form_style dl dd div select {
+	float:left;
+	margin-right:5px;
+}
+#main .form_style dl dd textarea {
+	width:700px;
+	height:5em;
+}
+#main .form_style p {
+	text-align:center;
+}
+#main .form_style dd p {
+	text-align:left;
+	margin-bottom:0;
+}
+#main .form_style p.notes a {
+	color:#008cd6;
+}
+#main .form_style p.notes {
+	text-align:left;
+}
+#main p.done {
+	text-align:center;
+	padding:80px 0 50px 0;
+}
+
+#main .form_style div.form_top_error-message {
+	color:#fa5251;
+	font-weight:bold;
+	padding-left:3px;
+	padding-bottom:10px;
+}
+#main .form_style dl dd input.form-error,
+#main .form_style dl dd select.form-error,
+#main .form_style dl dd textarea.form-error {
+	background:#fcebf3;
+}
+
+#main .form_style dl dd div.error-message {
+	color:#fa5251;
+	font-weight:bold;
+	padding-left:3px;
+	padding-bottom:10px;
+}
+#main .form_style div.btn_submit {
+	padding-left:335px;
+}
+#main .form_style div.btn_submit:after {
+	content: "."; display: block; visibility: hidden; height: 0.1px; font-size: 0.1em; line-height: 0; clear: both;
+}
+#main div.btn_submit form {
+	width:140px;
+	float:left;
+	padding-right:20px;
+}
+
+
+
+#main #main_area .contact_check {
+	width:560px;
+	margin:30px auto 20px;
+	background:url(../img/share/bg-form_submit.gif);
+}
+#main #main_area .contact_check_top {
+	width:560px;
+	background:url(../img/share/bg-form_submit_top.gif) top no-repeat;
+}
+#main #main_area .contact_check_bottom {
+	width:560px;
+	background:url(../img/share/bg-form_submit_bottom.gif) bottom no-repeat;
+	text-align:center;
+	padding:20px 0 5px 0;
+}
+
+#main #main_area .contact_check_bottom strong {
+	font-size:130%;
+}
+
+#main .form_style input.short[type="text"],
+#main .form_style select.short
+{
+    width: 120px;
+}
+
+#main .form_style input.long[type="text"],
+#main .form_style select.long
+{
+    width: 400px;
+}
+
+#main .form_style .btn 
+{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+form
+{
+    display: inline;
+    margin: 0px;
+}
+
+#main input.money_input,
+#main input.hour_input 
+{
+    text-align: right;
+}

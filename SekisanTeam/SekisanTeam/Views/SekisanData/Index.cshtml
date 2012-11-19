@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SekisanTeam.Models.T_SEKISAN_DATA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            T_CLIENT
+        </th>
+        <th>
+            CODE
+        </th>
+        <th>
+            NAME
+        </th>
+        <th>
+            CODE_TASK
+        </th>
+        <th>
+            NAME_TASK
+        </th>
+        <th>
+            HOUR
+        </th>
+        <th>
+            T_MASTER_RATE
+        </th>
+        <th>
+            KINGAKU
+        </th>
+        <th>
+            T_MASTER_DIFFICULT
+        </th>
+        <th>
+            MEMO1
+        </th>
+        <th>
+            MEMO2
+        </th>
+        <th>
+            ID_MEMBER
+        </th>
+        <th>
+            IS_KAKUTEI
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_CLIENT.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE_TASK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME_TASK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_MASTER_RATE.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KINGAKU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_MASTER_DIFFICULT.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEMO1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEMO2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_MEMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_KAKUTEI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

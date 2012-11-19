@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sekisanModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="T_INT">
+      <EntityTypeMapping TypeName="sekisanModel.T_INT">
+        <MappingFragment StoreEntitySet="T_INT">
+          <ScalarProperty Name="INT" ColumnName="INT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MASTER_DIFFICULT">
+      <EntityTypeMapping TypeName="sekisanModel.T_MASTER_DIFFICULT">
+        <MappingFragment StoreEntitySet="T_MASTER_DIFFICULT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MASTER_RATE">
+      <EntityTypeMapping TypeName="sekisanModel.T_MASTER_RATE">
+        <MappingFragment StoreEntitySet="T_MASTER_RATE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MEMBER">
+      <EntityTypeMapping TypeName="sekisanModel.T_MEMBER">
+        <MappingFragment StoreEntitySet="T_MEMBER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

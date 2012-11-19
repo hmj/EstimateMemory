@@ -1,0 +1,70 @@
+﻿@model SekisanTeam.Models.MitsumoriData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MitsumoriData</legend>
+
+    <div class="display-label">IdMitsumori</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdMitsumori)
+    </div>
+
+    <div class="display-label">NameMitsumori</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NameMitsumori)
+    </div>
+
+    <div class="display-label">CodeTask</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CodeTask)
+    </div>
+
+    <div class="display-label">NameTask</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NameTask)
+    </div>
+
+    <div class="display-label">ShortNameClient</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShortNameClient)
+    </div>
+
+    <div class="display-label">Hour</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hour)
+    </div>
+
+    <div class="display-label">Ratio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ratio)
+    </div>
+
+    <div class="display-label">Money</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Money)
+    </div>
+
+    <div class="display-label">Rank</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rank)
+    </div>
+
+    <div class="display-label">Memo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Memo)
+    </div>
+
+    <div class="display-label">User</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

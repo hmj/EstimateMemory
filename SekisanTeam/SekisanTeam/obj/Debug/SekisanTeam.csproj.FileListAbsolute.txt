@@ -1,0 +1,7 @@
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\bin\SekisanTeam.dll
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\bin\SekisanTeam.pdb
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\bin\EntityFramework.dll
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\bin\EntityFramework.xml
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\obj\Debug\SekisanTeam.dll
+C:\Users\ryota.yamada\documents\visual studio 2010\Projects\SekisanTeam\SekisanTeam\obj\Debug\SekisanTeam.pdb

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sekisanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="sekisanModelStoreContainer">
+    <EntitySet Name="T_INT" EntityType="sekisanModel.Store.T_INT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_MASTER_DIFFICULT" EntityType="sekisanModel.Store.T_MASTER_DIFFICULT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_MASTER_RATE" EntityType="sekisanModel.Store.T_MASTER_RATE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_MEMBER" EntityType="sekisanModel.Store.T_MEMBER" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="T_INT">
+    <Key>
+      <PropertyRef Name="INT" />
+    </Key>
+    <Property Name="INT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_MASTER_DIFFICULT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="T_MASTER_RATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="RATE" Type="money" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="T_MEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+</Schema>

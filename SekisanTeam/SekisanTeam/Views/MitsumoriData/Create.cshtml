@@ -1,0 +1,42 @@
+﻿@using System.Web.Mvc.Html;
+@{
+    ViewBag.Title = "見積データ作成";
+    Dictionary<string, string> comboBoxDefaultOption = new Dictionary<string, string>();
+    comboBoxDefaultOption.Add("use_blank", "1");
+    comboBoxDefaultOption.Add("value_blank", "");
+    comboBoxDefaultOption.Add("label_blank", "");
+    SelectListItem[] RatioData = System.Web.Mvc.HtmlHelperExtensions.RatioDropDownListData();
+
+}
+<script src="@Url.Content("~/Scripts/FormScript.js")" type="text/javascript"></script>
+
+<h2>@ViewBag.Title</h2>
+<div class="form_style">
+@Html.BeginForm()
+<dl>
+    <dt>積算名 @Html.RequiredLabel()</dt>
+    <dd>@Html.TextBox("nameSekisn", null, new { @class="long" })</dd>
+    <dt>タスクコード @Html.RequiredLabel()</dt>
+    <dd>@Html.TextBox("codeTask", null, new { @class = "short" })</dd>
+    <dt>タスク名 @Html.RequiredLabel()</dt>
+    <dd>@Html.TextBox("nameTask", null, new { @class = "long" })</dd>
+    <dt>クライアント @Html.RequiredLabel()</dt>
+    <dd>@Html.TextBox("shortNameClient")</dd>
+
+    <dt>見積時間</dt>
+    <dd>@Html.TextBox("hour", "", new {@class="short hour_input", onblur="javascript: MitsumoriForm.UpdateKingaku();"})<span class="tanni">時間</span></dd>
+    <dt>倍率 @Html.RequiredLabel()</dt>
+    <dd>@Html.DropDownList("ratio", RatioData, null, null)</dd>
+    <dt>金額 @Html.RequiredLabel()</dt>
+    <dd>@Html.TextBox("money", "", new {@class="short money_input"})<span class="tanni">円</span></dd>
+    <dt>難易度</dt>
+    <dd></dd>
+    <dt>積算内容 @Html.RequiredLabel()</dt>
+    <dd>@Html.TextArea("memo1")</dd>
+    <dt>積算メモ</dt>
+    <dd>@Html.TextArea("memo2")</dd>
+</dl>
+
+
+<input type="submit" value="送信" class="btn btn-primary" />
+</div>

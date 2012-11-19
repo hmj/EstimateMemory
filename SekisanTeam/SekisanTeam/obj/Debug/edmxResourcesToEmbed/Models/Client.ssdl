@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sekisanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="sekisanModelStoreContainer">
+    <EntitySet Name="T_CLIENT" EntityType="sekisanModel.Store.T_CLIENT" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="T_CLIENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>見積一覧</h2>
+
+@using (Html.BeginForm(
+    "Create",
+    "MitsumoriData",
+    null,
+    FormMethod.Get,
+    null
+))
+{ 
+@Html.SubmitButton("見積登録", "")
+}
+

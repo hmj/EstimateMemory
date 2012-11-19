@@ -1,0 +1,36 @@
+﻿@model SekisanTeam.Models.T_MEMBER
+
+@{
+    ViewBag.Title = "メンバー登録";
+}
+
+<h2>メンバー登録</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="form_style">
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <dl>
+            <dt class="editor-label">社員コード @Html.RequiredLabel()</dt>
+            <dd class="editor-field">                
+                @Html.EditorFor(model => model.CODE)
+                @Html.ValidationMessageFor(model => model.NAME)
+            </dd>
+
+            <dt class="editor-label">社員名 @Html.RequiredLabel()</dt>
+            <dd class="editor-field">
+                @Html.EditorFor(model => model.NAME)
+                @Html.ValidationMessageFor(model => model.NAME)
+            </dd>
+        </dl>
+        <p>
+            @Html.SubmitButton("登録", null)
+        </p>
+    }
+
+    <div>
+        @Html.ActionButton("戻る", "Index", "Member", null)
+    </div>
+</div>

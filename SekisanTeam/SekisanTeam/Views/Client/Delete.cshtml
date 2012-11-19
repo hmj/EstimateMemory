@@ -1,0 +1,31 @@
+﻿@model SekisanTeam.Models.T_CLIENT
+
+@{
+    ViewBag.Title = "クライアント削除確認";
+}
+
+<h2>クライアント削除確認</h2>
+
+<p>このクライアントを本当に削除してもよろしいですか？</p>
+<div class="form_style">
+    <dl>
+        <dt class="display-label">クライアントコード</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt class="display-label">クライアント名</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        <p>
+            @Html.SubmitButton("削除", null)            
+        </p>
+    }
+
+    <p>
+        @Html.ActionButton("戻る", "Index", "Client", null)
+    </p>
+</div>

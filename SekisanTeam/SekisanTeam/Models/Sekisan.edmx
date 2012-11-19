@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="sekisanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="sekisanModelStoreContainer">
+          <EntitySet Name="T_CLIENT" EntityType="sekisanModel.Store.T_CLIENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_COMMENT" EntityType="sekisanModel.Store.T_COMMENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_MASTER_DIFFICULT" EntityType="sekisanModel.Store.T_MASTER_DIFFICULT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_MASTER_RATE" EntityType="sekisanModel.Store.T_MASTER_RATE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_MEMBER" EntityType="sekisanModel.Store.T_MEMBER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_SEKISAN_DATA" EntityType="sekisanModel.Store.T_SEKISAN_DATA" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_T_COMMENT_T_MEMBER" Association="sekisanModel.Store.FK_T_COMMENT_T_MEMBER">
+            <End Role="T_MEMBER" EntitySet="T_MEMBER" />
+            <End Role="T_COMMENT" EntitySet="T_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_COMMENT_T_SEKISAN_DATA" Association="sekisanModel.Store.FK_T_COMMENT_T_SEKISAN_DATA">
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+            <End Role="T_COMMENT" EntitySet="T_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_CLIENT" Association="sekisanModel.Store.FK_T_SEKISAN_DATA_T_CLIENT">
+            <End Role="T_CLIENT" EntitySet="T_CLIENT" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT" Association="sekisanModel.Store.FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT">
+            <End Role="T_MASTER_DIFFICULT" EntitySet="T_MASTER_DIFFICULT" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MASTER_RATE" Association="sekisanModel.Store.FK_T_SEKISAN_DATA_T_MASTER_RATE">
+            <End Role="T_MASTER_RATE" EntitySet="T_MASTER_RATE" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MEMBER" Association="sekisanModel.Store.FK_T_SEKISAN_DATA_T_MEMBER">
+            <End Role="T_MEMBER" EntitySet="T_MEMBER" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_CLIENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_COMMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SEKISAN_DATA" Type="int" Nullable="false" />
+          <Property Name="ID_MEMBER" Type="int" Nullable="false" />
+          <Property Name="DATETIME_COMMENT" Type="datetime" Nullable="false" />
+          <Property Name="COMMENT_MESSAGE" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="T_MASTER_DIFFICULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_MASTER_RATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="RATE" Type="money" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_MEMBER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_SEKISAN_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_CLIENT" Type="int" Nullable="false" />
+          <Property Name="CODE" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="CODE_TASK" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_TASK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HOUR" Type="money" />
+          <Property Name="ID_RATIO" Type="int" />
+          <Property Name="KINGAKU" Type="money" />
+          <Property Name="ID_DIFFICULT" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MEMO1" Type="nvarchar" />
+          <Property Name="MEMO2" Type="nvarchar" />
+          <Property Name="ID_MEMBER" Type="int" />
+          <Property Name="IS_KAKUTEI" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_COMMENT_T_MEMBER">
+          <End Role="T_MEMBER" Type="sekisanModel.Store.T_MEMBER" Multiplicity="1" />
+          <End Role="T_COMMENT" Type="sekisanModel.Store.T_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MEMBER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMMENT">
+              <PropertyRef Name="ID_MEMBER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_COMMENT_T_SEKISAN_DATA">
+          <End Role="T_SEKISAN_DATA" Type="sekisanModel.Store.T_SEKISAN_DATA" Multiplicity="1" />
+          <End Role="T_COMMENT" Type="sekisanModel.Store.T_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMMENT">
+              <PropertyRef Name="ID_SEKISAN_DATA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_CLIENT">
+          <End Role="T_CLIENT" Type="sekisanModel.Store.T_CLIENT" Multiplicity="1" />
+          <End Role="T_SEKISAN_DATA" Type="sekisanModel.Store.T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_CLIENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT">
+          <End Role="T_MASTER_DIFFICULT" Type="sekisanModel.Store.T_MASTER_DIFFICULT" Multiplicity="1" />
+          <End Role="T_SEKISAN_DATA" Type="sekisanModel.Store.T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MASTER_DIFFICULT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_DIFFICULT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MASTER_RATE">
+          <End Role="T_MASTER_RATE" Type="sekisanModel.Store.T_MASTER_RATE" Multiplicity="0..1" />
+          <End Role="T_SEKISAN_DATA" Type="sekisanModel.Store.T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MASTER_RATE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_RATIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MEMBER">
+          <End Role="T_MEMBER" Type="sekisanModel.Store.T_MEMBER" Multiplicity="1" />
+          <End Role="T_SEKISAN_DATA" Type="sekisanModel.Store.T_SEKISAN_DATA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_MEMBER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sekisanModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="defaultEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_CLIENT" EntityType="sekisanModel.T_CLIENT" />
+          <EntitySet Name="T_MASTER_DIFFICULT" EntityType="sekisanModel.T_MASTER_DIFFICULT" />
+          <EntitySet Name="T_MASTER_RATE" EntityType="sekisanModel.T_MASTER_RATE" />
+          <EntitySet Name="T_MEMBER" EntityType="sekisanModel.T_MEMBER" />
+          <EntitySet Name="T_COMMENT" EntityType="sekisanModel.T_COMMENT" />
+          <EntitySet Name="T_SEKISAN_DATA" EntityType="sekisanModel.T_SEKISAN_DATA" />
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_CLIENT" Association="sekisanModel.FK_T_SEKISAN_DATA_T_CLIENT">
+            <End Role="T_CLIENT" EntitySet="T_CLIENT" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_COMMENT_T_MEMBER" Association="sekisanModel.FK_T_COMMENT_T_MEMBER">
+            <End Role="T_MEMBER" EntitySet="T_MEMBER" />
+            <End Role="T_COMMENT" EntitySet="T_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_COMMENT_T_SEKISAN_DATA" Association="sekisanModel.FK_T_COMMENT_T_SEKISAN_DATA">
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+            <End Role="T_COMMENT" EntitySet="T_COMMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT" Association="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT">
+            <End Role="T_MASTER_DIFFICULT" EntitySet="T_MASTER_DIFFICULT" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MASTER_RATE" Association="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_RATE">
+            <End Role="T_MASTER_RATE" EntitySet="T_MASTER_RATE" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SEKISAN_DATA_T_MEMBER" Association="sekisanModel.FK_T_SEKISAN_DATA_T_MEMBER">
+            <End Role="T_MEMBER" EntitySet="T_MEMBER" />
+            <End Role="T_SEKISAN_DATA" EntitySet="T_SEKISAN_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_CLIENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="T_SEKISAN_DATA" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_CLIENT" FromRole="T_CLIENT" ToRole="T_SEKISAN_DATA" />
+        </EntityType>
+        <EntityType Name="T_MASTER_DIFFICULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CODE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_SEKISAN_DATA" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT" FromRole="T_MASTER_DIFFICULT" ToRole="T_SEKISAN_DATA" />
+        </EntityType>
+        <EntityType Name="T_MASTER_RATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CODE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RATE" Precision="19" Scale="4" />
+          <Property Type="String" Name="NAME" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_SEKISAN_DATA" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_RATE" FromRole="T_MASTER_RATE" ToRole="T_SEKISAN_DATA" />
+        </EntityType>
+        <EntityType Name="T_MEMBER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CODE" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMMENT" Relationship="sekisanModel.FK_T_COMMENT_T_MEMBER" FromRole="T_MEMBER" ToRole="T_COMMENT" />
+          <NavigationProperty Name="T_SEKISAN_DATA" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MEMBER" FromRole="T_MEMBER" ToRole="T_SEKISAN_DATA" />
+        </EntityType>
+        <EntityType Name="T_COMMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ID_SEKISAN_DATA" Nullable="false" />
+          <Property Type="Int32" Name="ID_MEMBER" Nullable="false" />
+          <Property Type="DateTime" Name="DATETIME_COMMENT" Nullable="false" />
+          <Property Type="String" Name="COMMENT_MESSAGE" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_MEMBER" Relationship="sekisanModel.FK_T_COMMENT_T_MEMBER" FromRole="T_COMMENT" ToRole="T_MEMBER" />
+          <NavigationProperty Name="T_SEKISAN_DATA" Relationship="sekisanModel.FK_T_COMMENT_T_SEKISAN_DATA" FromRole="T_COMMENT" ToRole="T_SEKISAN_DATA" />
+        </EntityType>
+        <EntityType Name="T_SEKISAN_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ID_CLIENT" Nullable="false" />
+          <Property Type="String" Name="CODE" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CODE_TASK" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NAME_TASK" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="HOUR" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="ID_RATIO" />
+          <Property Type="Decimal" Name="KINGAKU" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="ID_DIFFICULT" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MEMO1" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MEMO2" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ID_MEMBER" />
+          <Property Type="Byte" Name="IS_KAKUTEI" Nullable="false" />
+          <NavigationProperty Name="T_CLIENT" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_CLIENT" FromRole="T_SEKISAN_DATA" ToRole="T_CLIENT" />
+          <NavigationProperty Name="T_COMMENT" Relationship="sekisanModel.FK_T_COMMENT_T_SEKISAN_DATA" FromRole="T_SEKISAN_DATA" ToRole="T_COMMENT" />
+          <NavigationProperty Name="T_MASTER_DIFFICULT" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT" FromRole="T_SEKISAN_DATA" ToRole="T_MASTER_DIFFICULT" />
+          <NavigationProperty Name="T_MASTER_RATE" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_RATE" FromRole="T_SEKISAN_DATA" ToRole="T_MASTER_RATE" />
+          <NavigationProperty Name="T_MEMBER" Relationship="sekisanModel.FK_T_SEKISAN_DATA_T_MEMBER" FromRole="T_SEKISAN_DATA" ToRole="T_MEMBER" />
+        </EntityType>
+        <Association Name="FK_T_SEKISAN_DATA_T_CLIENT">
+          <End Type="sekisanModel.T_CLIENT" Role="T_CLIENT" Multiplicity="1" />
+          <End Type="sekisanModel.T_SEKISAN_DATA" Role="T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_CLIENT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_COMMENT_T_MEMBER">
+          <End Type="sekisanModel.T_MEMBER" Role="T_MEMBER" Multiplicity="1" />
+          <End Type="sekisanModel.T_COMMENT" Role="T_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MEMBER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMMENT">
+              <PropertyRef Name="ID_MEMBER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_COMMENT_T_SEKISAN_DATA">
+          <End Type="sekisanModel.T_SEKISAN_DATA" Role="T_SEKISAN_DATA" Multiplicity="1" />
+          <End Type="sekisanModel.T_COMMENT" Role="T_COMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMMENT">
+              <PropertyRef Name="ID_SEKISAN_DATA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT">
+          <End Type="sekisanModel.T_MASTER_DIFFICULT" Role="T_MASTER_DIFFICULT" Multiplicity="1" />
+          <End Type="sekisanModel.T_SEKISAN_DATA" Role="T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MASTER_DIFFICULT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_DIFFICULT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MASTER_RATE">
+          <End Type="sekisanModel.T_MASTER_RATE" Role="T_MASTER_RATE" Multiplicity="0..1" />
+          <End Type="sekisanModel.T_SEKISAN_DATA" Role="T_SEKISAN_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_MASTER_RATE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID_RATIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SEKISAN_DATA_T_MEMBER">
+          <End Type="sekisanModel.T_MEMBER" Role="T_MEMBER" Multiplicity="1" />
+          <End Type="sekisanModel.T_SEKISAN_DATA" Role="T_SEKISAN_DATA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_MEMBER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_SEKISAN_DATA">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sekisanModelStoreContainer" CdmEntityContainer="defaultEntity">
+          <EntitySetMapping Name="T_CLIENT"><EntityTypeMapping TypeName="sekisanModel.T_CLIENT"><MappingFragment StoreEntitySet="T_CLIENT">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CODE" ColumnName="CODE" />
+            <ScalarProperty Name="NAME" ColumnName="NAME" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_MASTER_DIFFICULT">
+            <EntityTypeMapping TypeName="sekisanModel.T_MASTER_DIFFICULT">
+              <MappingFragment StoreEntitySet="T_MASTER_DIFFICULT">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MASTER_RATE">
+            <EntityTypeMapping TypeName="sekisanModel.T_MASTER_RATE">
+              <MappingFragment StoreEntitySet="T_MASTER_RATE">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MEMBER">
+            <EntityTypeMapping TypeName="sekisanModel.T_MEMBER">
+              <MappingFragment StoreEntitySet="T_MEMBER">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMMENT">
+            <EntityTypeMapping TypeName="sekisanModel.T_COMMENT">
+              <MappingFragment StoreEntitySet="T_COMMENT">
+                <ScalarProperty Name="COMMENT_MESSAGE" ColumnName="COMMENT_MESSAGE" />
+                <ScalarProperty Name="DATETIME_COMMENT" ColumnName="DATETIME_COMMENT" />
+                <ScalarProperty Name="ID_MEMBER" ColumnName="ID_MEMBER" />
+                <ScalarProperty Name="ID_SEKISAN_DATA" ColumnName="ID_SEKISAN_DATA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SEKISAN_DATA">
+            <EntityTypeMapping TypeName="sekisanModel.T_SEKISAN_DATA">
+              <MappingFragment StoreEntitySet="T_SEKISAN_DATA">
+                <ScalarProperty Name="IS_KAKUTEI" ColumnName="IS_KAKUTEI" />
+                <ScalarProperty Name="ID_MEMBER" ColumnName="ID_MEMBER" />
+                <ScalarProperty Name="MEMO2" ColumnName="MEMO2" />
+                <ScalarProperty Name="MEMO1" ColumnName="MEMO1" />
+                <ScalarProperty Name="ID_DIFFICULT" ColumnName="ID_DIFFICULT" />
+                <ScalarProperty Name="KINGAKU" ColumnName="KINGAKU" />
+                <ScalarProperty Name="ID_RATIO" ColumnName="ID_RATIO" />
+                <ScalarProperty Name="HOUR" ColumnName="HOUR" />
+                <ScalarProperty Name="NAME_TASK" ColumnName="NAME_TASK" />
+                <ScalarProperty Name="CODE_TASK" ColumnName="CODE_TASK" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Client">
+        <EntityTypeShape EntityType="sekisanModel.T_CLIENT" Width="1.5" PointX="0.75" PointY="0.75" Height="1.723125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sekisanModel.T_MASTER_DIFFICULT" Width="1.5" PointX="10.5" PointY="1" Height="1.936666666666667" />
+        <EntityTypeShape EntityType="sekisanModel.T_MASTER_RATE" Width="1.5" PointX="10.25" PointY="4.25" Height="2.1502083333333335" />
+        <EntityTypeShape EntityType="sekisanModel.T_MEMBER" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7231249999999996" />
+        <EntityTypeShape EntityType="sekisanModel.T_COMMENT" Width="1.5" PointX="5" PointY="3.5" Height="2.5772916666666656" />
+        <EntityTypeShape EntityType="sekisanModel.T_SEKISAN_DATA" Width="1.5" PointX="7.25" PointY="0.75" Height="5.1397916666666656" />
+        <AssociationConnector Association="sekisanModel.FK_T_SEKISAN_DATA_T_CLIENT" >
+          <ConnectorPoint PointX="2.25" PointY="1.7717187500000002" />
+          <ConnectorPoint PointX="7.25" PointY="1.7717187500000002" />
+        </AssociationConnector>
+        <AssociationConnector Association="sekisanModel.FK_T_COMMENT_T_MEMBER" >
+          <ConnectorPoint PointX="4.25" PointY="4.8251041666666659" />
+          <ConnectorPoint PointX="5" PointY="4.8251041666666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="sekisanModel.FK_T_COMMENT_T_SEKISAN_DATA" >
+          <ConnectorPoint PointX="7.25" PointY="4.6948958333333328" />
+          <ConnectorPoint PointX="6.5" PointY="4.6948958333333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_DIFFICULT" >
+          <ConnectorPoint PointX="10.5" PointY="1.9683333333333335" />
+          <ConnectorPoint PointX="8.75" PointY="1.9683333333333335" />
+        </AssociationConnector>
+        <AssociationConnector Association="sekisanModel.FK_T_SEKISAN_DATA_T_MASTER_RATE" >
+          <ConnectorPoint PointX="10.25" PointY="5.0698958333333328" />
+          <ConnectorPoint PointX="8.75" PointY="5.0698958333333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="sekisanModel.FK_T_SEKISAN_DATA_T_MEMBER" >
+          <ConnectorPoint PointX="3.5" PointY="3.75" />
+          <ConnectorPoint PointX="3.5" PointY="2.6358618750000007" />
+          <ConnectorPoint PointX="7.25" PointY="2.6358618750000007" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

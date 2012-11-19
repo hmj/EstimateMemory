@@ -1,0 +1,25 @@
+﻿@model SekisanTeam.Models.T_MEMBER
+
+@{
+    ViewBag.Title = "社員閲覧";
+}
+
+<h2>社員閲覧</h2>
+
+<div class="form_style">
+    <dl>
+        <dt class="display-label">コード</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt class="display-label">社員名</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+    </dl>
+    <p>
+        @Html.ActionButton("編集", "Edit", "Member", new {id=Model.ID})
+        @Html.ActionButton("戻る", "Index", "Member", null)
+    </p>
+</div>

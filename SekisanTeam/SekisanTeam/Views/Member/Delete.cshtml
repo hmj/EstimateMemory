@@ -1,0 +1,28 @@
+﻿@model SekisanTeam.Models.T_MEMBER
+
+@{
+    ViewBag.Title = "社員削除確認";
+}
+
+<h2>社員削除確認</h2>
+<p>この社員を本当に削除してもよろしいですか？</p>
+
+<div class="form_style">
+    <dl>
+        <dt class="display-label">社員コード</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt class="display-label">社員名</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        <p>
+            @Html.SubmitButton("削除", null)
+        </p>
+    }
+    @Html.ActionButton("戻る", "Index", "Member", null)
+</div>

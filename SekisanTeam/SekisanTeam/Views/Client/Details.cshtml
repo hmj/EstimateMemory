@@ -1,0 +1,25 @@
+﻿@model SekisanTeam.Models.T_CLIENT
+
+@{
+    ViewBag.Title = "クライアント詳細";
+}
+
+<h2>クライアント詳細</h2>
+
+<div class="form_style">
+    <dl>
+        <dt class="display-label">クライアントコード</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt class="display-label">クライアント名</dt>
+        <dd class="display-field">
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+    </dl>
+    <p>
+        @Html.ActionButton("編集", "Edit", "Client", new { id = Model.ID })
+    </p>
+    @Html.ActionButton("戻る", "Index", "Client", null)
+</div>
